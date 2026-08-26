@@ -1,4 +1,4 @@
-# Sarcasm Detection on Public Opinion Toward the Free Nutritious Meal Program Using IndoBERT
+# Sarcasm Analysis and Detection of Public Opinion on The Free Nutritious Meals Program (MBG) on Social Media X Using The IndoBERT Model
 
 This repository implements a **complete experimental pipeline** for sarcasm detection on Indonesian-language tweets related to the **Free Nutritious Meal Program** (Program Makan Bergizi Gratis / MBG) on social media X. The system evaluates **IndoBERT against SVM as a baseline**, and analyzes the impact of integrating a **data-driven sarcasm lexicon** on model performance, in a fully reproducible workflow.
 
