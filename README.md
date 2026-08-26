@@ -1,4 +1,4 @@
-# Sarcasm Analysis and Detection of Public Opinion on The Free Nutritious Meals Program (MBG) on Social Media X Using The IndoBERT Model
+# Sarcasm Detection on Public Opinion Toward the Free Nutritious Meal Program Using IndoBERT
 
 This repository implements a **complete experimental pipeline** for sarcasm detection on Indonesian-language tweets related to the **Free Nutritious Meal Program** (Program Makan Bergizi Gratis / MBG) on social media X. The system evaluates **IndoBERT against SVM as a baseline**, and analyzes the impact of integrating a **data-driven sarcasm lexicon** on model performance, in a fully reproducible workflow.
 
@@ -38,7 +38,7 @@ Two datasets were used in this research:
 
 **Dataset 2 — Crawled MBG Public Opinion Dataset**
 - Collected via crawling from social media X using the **Tweet-Harvest** tool
-- Nine keywords used, covering general terms, exact phrases, and hashtags (e.g. `#ProgramMBG`, `#MBG`), filtered with `lang:id`, max 500 tweets per keyword per session
+- Nine keywords used, covering general terms, exact phrases, and hashtags (e.g. `#MakanBergiziGratis`, `#ProgramMBG`, `#MBG`), filtered with `lang:id`, max 500 tweets per keyword per session
 - Collected in two phases:
   - Pre-implementation phase: 1 November 2024 – 5 January 2025
   - Implementation phase: 6 January 2025 – 31 March 2025
@@ -113,16 +113,36 @@ Both evaluated with and without sarcasm lexicon features.
 - Adding sarcasm lexicon features did not consistently improve performance, particularly for IndoBERT, which showed a significant performance drop after lexicon integration
 - Temporal analysis shows an increase in sarcasm proportion following the implementation of Program MBG
 
+## 📁 Repository Structure
+
+```
+├── data/
+│   ├── dataset_1/
+│   │   ├── raw/              → link to Dataset 1 source
+│   │   └── preprocessed/     → cleaned & labeled Dataset 1
+│   └── dataset_2/
+│       ├── raw/              → link to raw crawled tweets
+│       ├── preprocessed/     → cleaned Dataset 2
+│       └── labelling/        → annotator labels & consensus files
+├── src/
+│   └── dataset_2_MBG/        → notebooks, numbered by pipeline order
+├── output/
+│   └── figures/              → all figures (English version)
+├── README.md
+└── requirements.txt
+```
+
 ## 🚀 How to Run
 
-1. Install dependencies:
+> **Note:** These notebooks were developed and are intended to be run on **Google Colab**, as they use `google.colab.drive` to mount Google Drive for accessing datasets and saving model outputs. Running them outside Colab (e.g. local Jupyter Notebook) will require adjusting the file paths and removing the Drive-mounting cell.
+
+1. Open the notebooks in `src/dataset_2_MBG/` in [Google Colab](https://colab.research.google.com/)
+2. Install dependencies (first cell of each notebook, or run):
 ```bash
 pip install -r requirements.txt
 ```
-2. Open the notebook/script using:
-   - Jupyter Notebook, or
-   - VS Code Interactive Window
-3. Run cells sequentially to execute the full experiment.
+3. Mount your Google Drive and adjust the dataset paths to match your own Drive structure
+4. Run the notebooks in numbered order (00 → 07) to execute the full pipeline, from crawling through preprocessing, labelling, splitting, model building, and evaluation
 
 ## ✨ Key Features
 
@@ -138,7 +158,7 @@ pip install -r requirements.txt
 
 📧 **Author:** Dian Pratiwi
 
-📩 dianpratiwi14044@gmail.com
+📩 diapratiwi14044@gmail.com
 
 ---
 
@@ -182,7 +202,7 @@ Penelitian ini menggunakan dua jenis dataset:
 
 **Dataset 2 — Dataset Hasil Crawling Opini Publik terhadap MBG**
 - Dikumpulkan melalui proses crawling dari media sosial X menggunakan tool **Tweet-Harvest**
-- Menggunakan sembilan kata kunci yang mencakup kata kunci umum, frasa eksak, dan tagar (misalnya `#ProgramMBG`, `#MBG`), dengan filter `lang:id`, maksimum 500 tweet per kata kunci per sesi
+- Menggunakan sembilan kata kunci yang mencakup kata kunci umum, frasa eksak, dan tagar (misalnya `#MakanBergiziGratis`, `#ProgramMBG`, `#MBG`), dengan filter `lang:id`, maksimum 500 tweet per kata kunci per sesi
 - Dikumpulkan dalam dua fase:
   - Fase pra-implementasi: 1 November 2024 – 5 Januari 2025
   - Fase implementasi: 6 Januari 2025 – 31 Maret 2025
@@ -257,16 +277,36 @@ Keduanya dievaluasi dengan dan tanpa fitur sarcasm lexicon.
 - Penambahan fitur sarcasm lexicon tidak selalu meningkatkan performa, khususnya pada IndoBERT yang mengalami penurunan performa signifikan setelah integrasi lexicon
 - Analisis temporal menunjukkan peningkatan proporsi sarkasme setelah implementasi Program MBG
 
+## 📁 Struktur Repositori
+
+```
+├── data/
+│   ├── dataset_1/
+│   │   ├── raw/              → link sumber Dataset 1
+│   │   └── preprocessed/     → Dataset 1 yang sudah dibersihkan & dilabel
+│   └── dataset_2/
+│       ├── raw/              → link data mentah hasil crawling
+│       ├── preprocessed/     → Dataset 2 yang sudah dibersihkan
+│       └── labelling/        → label annotator & file consensus
+├── src/
+│   └── dataset_2_MBG/        → notebook, diberi nomor sesuai urutan pipeline
+├── output/
+│   └── figures/              → seluruh grafik (versi Bahasa Inggris)
+├── README.md
+└── requirements.txt
+```
+
 ## 🚀 Cara Menjalankan
 
-1. Install dependency:
+> **Catatan:** Notebook ini dikembangkan dan ditujukan untuk dijalankan di **Google Colab**, karena menggunakan `google.colab.drive` untuk mount Google Drive dalam mengakses dataset dan menyimpan hasil model. Menjalankan di luar Colab (misal Jupyter Notebook lokal) memerlukan penyesuaian path file dan penghapusan cell mount Drive.
+
+1. Buka notebook di folder `src/dataset_2_MBG/` di [Google Colab](https://colab.research.google.com/)
+2. Install dependency (cell pertama tiap notebook, atau jalankan):
 ```bash
 pip install -r requirements.txt
 ```
-2. Buka notebook/script menggunakan:
-   - Jupyter Notebook, atau
-   - VS Code Interactive Window
-3. Jalankan sel secara berurutan untuk mengeksekusi seluruh eksperimen.
+3. Mount Google Drive kamu dan sesuaikan path dataset dengan struktur Drive kamu sendiri
+4. Jalankan notebook sesuai urutan nomor (00 → 07) untuk mengeksekusi seluruh pipeline, mulai dari crawling, preprocessing, pelabelan, splitting, pembuatan model, hingga evaluasi
 
 ## ✨ Fitur Utama
 
@@ -282,4 +322,4 @@ pip install -r requirements.txt
 
 📧 **Penulis:** Dian Pratiwi
 
-📩 dianpratiwi14044@gmail.com
+📩 diapratiwi14044@gmail.com
