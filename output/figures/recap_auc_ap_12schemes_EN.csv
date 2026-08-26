@@ -1,0 +1,13 @@
+Scheme,AUC,AP
+Scheme 1 IndoBERT D1 - Without Lexicon,0.9844,0.9858
+Scheme 2 SVM D1 - Without Lexicon,0.9732,0.9779
+Scheme 3 IndoBERT D2 - Without Lexicon,0.9294,0.7713
+Scheme 4 SVM D2 - Without Lexicon,0.9003,0.6643
+Scheme 5 IndoBERT D1+D2 - Without Lexicon,0.971,0.968
+Scheme 6 SVM D1+D2 - Without Lexicon,0.9631,0.9598
+Scheme 7 IndoBERT D1+Lexicon,0.982,0.9844
+Scheme 8 SVM D1+Lexicon,0.971,0.9767
+Scheme 9 IndoBERT D2+Lexicon,0.7754,0.4234
+Scheme 10 SVM D2+Lexicon,0.8748,0.6317
+Scheme 11 IndoBERT D1+D2+Lexicon,0.9668,0.9614
+Scheme 12 SVM D1+D2+Lexicon,0.9606,0.954
