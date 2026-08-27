@@ -121,7 +121,6 @@ Both evaluated with and without sarcasm lexicon features.
 │   │   ├── raw/              → link to Dataset 1 source
 │   │   └── preprocessed/     → cleaned & labeled Dataset 1
 │   └── dataset_2/
-│       ├── raw/              → link to raw crawled tweets
 │       ├── preprocessed/     → cleaned Dataset 2
 │       └── labelling/        → annotator labels & consensus files
 ├── src/
@@ -131,6 +130,9 @@ Both evaluated with and without sarcasm lexicon features.
 ├── README.md
 └── requirements.txt
 ```
+
+> **Note:** Raw crawled data (Dataset 2) is not included in this repository due to platform data-sharing restrictions (X/Twitter API Terms of Service) and to protect user privacy. Only the preprocessed and labeled data used for model training/evaluation are provided. To reproduce the raw crawling step, see the crawling notebook in `src/dataset_2_MBG/` and re-run it using Tweet-Harvest with your own API credentials.
+
 
 ## 🚀 How to Run
 
@@ -285,7 +287,6 @@ Keduanya dievaluasi dengan dan tanpa fitur sarcasm lexicon.
 │   │   ├── raw/              → link sumber Dataset 1
 │   │   └── preprocessed/     → Dataset 1 yang sudah dibersihkan & dilabel
 │   └── dataset_2/
-│       ├── raw/              → link data mentah hasil crawling
 │       ├── preprocessed/     → Dataset 2 yang sudah dibersihkan
 │       └── labelling/        → label annotator & file consensus
 ├── src/
@@ -295,6 +296,7 @@ Keduanya dievaluasi dengan dan tanpa fitur sarcasm lexicon.
 ├── README.md
 └── requirements.txt
 ```
+> **Catatan:** Data mentah hasil crawling (Dataset 2) tidak disertakan dalam repositori ini karena adanya pembatasan berbagi data dari platform (Terms of Service API X/Twitter) serta untuk melindungi privasi pengguna. Hanya data hasil preprocessing dan pelabelan yang digunakan untuk pelatihan/evaluasi model yang disediakan. Untuk mereproduksi tahap crawling, lihat notebook crawling di `src/dataset_2_MBG/` dan jalankan ulang menggunakan Tweet-Harvest dengan kredensial API kamu sendiri.
 
 ## 🚀 Cara Menjalankan
 
